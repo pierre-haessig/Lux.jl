@@ -619,7 +619,7 @@ val, pb_f = Zygote.pullback(f, x)
 
 
 ```
-(Float32[0.3850005, 0.71437216, 0.0016247969, 0.031389393, 0.0043726736], Zygote.var"#75#76"{Zygote.Pullback{Tuple{typeof(Main.var"##292".f), Vector{Float32}}, Tuple{Zygote.var"#3898#back#1247"{Zygote.ZBack{ChainRules.var"#slash_pullback_scalar#1579"{Vector{Float32}, Int64}}}, Zygote.var"#3834#back#1221"{Zygote.var"#1217#1220"{Vector{Float32}, Vector{Float32}}}, Zygote.Pullback{Tuple{typeof(Base.Broadcast.materialize), Vector{Float32}}, Tuple{}}}}}(∂(f)))
+(Float32[0.3850005, 0.71437216, 0.0016247969, 0.031389393, 0.0043726736], Zygote.var"#75#76"{Zygote.Pullback{Tuple{typeof(Main.var"##292".f), Vector{Float32}}, Tuple{Zygote.Pullback{Tuple{typeof(Base.Broadcast.materialize), Vector{Float32}}, Tuple{}}, Zygote.var"#3898#back#1247"{Zygote.ZBack{ChainRules.var"#slash_pullback_scalar#1579"{Vector{Float32}, Int64}}}, Zygote.var"#3834#back#1221"{Zygote.var"#1217#1220"{Vector{Float32}, Vector{Float32}}}}}}(∂(f)))
 ```
 
 
