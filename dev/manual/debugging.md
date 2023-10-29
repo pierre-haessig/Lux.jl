@@ -108,7 +108,7 @@ end
 [ Info: Input Type: Matrix{Float32} | Input Structure: (3, 1)
 [ Info: Running Layer: Dense(1 => 1) at location model.layers.layer_2.layers.layer_2!
 ┌ Error: Layer Dense(1 => 1) failed!! This layer is present at location model.layers.layer_2.layers.layer_2
-└ @ Lux.Experimental /var/lib/buildkite-agent/builds/gpuci-1/julialang/lux-dot-jl/src/contrib/debug.jl:113
+└ @ Lux.Experimental /var/lib/buildkite-agent/builds/gpuci-14/julialang/lux-dot-jl/src/contrib/debug.jl:113
 DimensionMismatch("A has dimensions (1,1) but B has dimensions (3,1)")
 ```
 
