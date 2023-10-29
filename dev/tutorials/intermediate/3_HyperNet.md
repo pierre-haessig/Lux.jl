@@ -220,23 +220,23 @@ train()
 
 ```
 [1/9] 	 MNIST Time 3.66s 	 Training Accuracy: 48.14% 	 Test Accuracy: 43.75%
-[1/9] 	 FashionMNIST Time 0.02s 	 Training Accuracy: 50.0% 	 Test Accuracy: 43.75%
-[2/9] 	 MNIST Time 0.02s 	 Training Accuracy: 70.9% 	 Test Accuracy: 62.5%
-[2/9] 	 FashionMNIST Time 0.02s 	 Training Accuracy: 54.59% 	 Test Accuracy: 50.0%
-[3/9] 	 MNIST Time 0.02s 	 Training Accuracy: 81.45% 	 Test Accuracy: 68.75%
-[3/9] 	 FashionMNIST Time 0.02s 	 Training Accuracy: 55.86% 	 Test Accuracy: 71.88%
-[4/9] 	 MNIST Time 0.02s 	 Training Accuracy: 89.36% 	 Test Accuracy: 87.5%
-[4/9] 	 FashionMNIST Time 0.02s 	 Training Accuracy: 58.5% 	 Test Accuracy: 50.0%
-[5/9] 	 MNIST Time 0.01s 	 Training Accuracy: 91.5% 	 Test Accuracy: 81.25%
-[5/9] 	 FashionMNIST Time 0.01s 	 Training Accuracy: 72.95% 	 Test Accuracy: 62.5%
-[6/9] 	 MNIST Time 0.01s 	 Training Accuracy: 92.19% 	 Test Accuracy: 93.75%
-[6/9] 	 FashionMNIST Time 0.01s 	 Training Accuracy: 70.21% 	 Test Accuracy: 71.88%
-[7/9] 	 MNIST Time 0.01s 	 Training Accuracy: 95.31% 	 Test Accuracy: 90.62%
-[7/9] 	 FashionMNIST Time 0.02s 	 Training Accuracy: 72.46% 	 Test Accuracy: 62.5%
-[8/9] 	 MNIST Time 0.02s 	 Training Accuracy: 96.58% 	 Test Accuracy: 90.62%
-[8/9] 	 FashionMNIST Time 0.02s 	 Training Accuracy: 77.05% 	 Test Accuracy: 68.75%
-[9/9] 	 MNIST Time 0.02s 	 Training Accuracy: 97.27% 	 Test Accuracy: 90.62%
-[9/9] 	 FashionMNIST Time 0.02s 	 Training Accuracy: 78.32% 	 Test Accuracy: 68.75%
+[1/9] 	 FashionMNIST Time 0.03s 	 Training Accuracy: 50.0% 	 Test Accuracy: 43.75%
+[2/9] 	 MNIST Time 0.03s 	 Training Accuracy: 70.9% 	 Test Accuracy: 62.5%
+[2/9] 	 FashionMNIST Time 0.03s 	 Training Accuracy: 54.59% 	 Test Accuracy: 50.0%
+[3/9] 	 MNIST Time 0.03s 	 Training Accuracy: 81.45% 	 Test Accuracy: 68.75%
+[3/9] 	 FashionMNIST Time 0.07s 	 Training Accuracy: 55.86% 	 Test Accuracy: 71.88%
+[4/9] 	 MNIST Time 0.03s 	 Training Accuracy: 89.36% 	 Test Accuracy: 87.5%
+[4/9] 	 FashionMNIST Time 0.03s 	 Training Accuracy: 58.5% 	 Test Accuracy: 50.0%
+[5/9] 	 MNIST Time 0.03s 	 Training Accuracy: 91.5% 	 Test Accuracy: 81.25%
+[5/9] 	 FashionMNIST Time 0.03s 	 Training Accuracy: 72.95% 	 Test Accuracy: 62.5%
+[6/9] 	 MNIST Time 0.05s 	 Training Accuracy: 92.19% 	 Test Accuracy: 93.75%
+[6/9] 	 FashionMNIST Time 0.03s 	 Training Accuracy: 70.21% 	 Test Accuracy: 71.88%
+[7/9] 	 MNIST Time 0.03s 	 Training Accuracy: 95.31% 	 Test Accuracy: 90.62%
+[7/9] 	 FashionMNIST Time 0.03s 	 Training Accuracy: 72.46% 	 Test Accuracy: 62.5%
+[8/9] 	 MNIST Time 0.03s 	 Training Accuracy: 96.58% 	 Test Accuracy: 90.62%
+[8/9] 	 FashionMNIST Time 0.04s 	 Training Accuracy: 77.05% 	 Test Accuracy: 68.75%
+[9/9] 	 MNIST Time 0.03s 	 Training Accuracy: 97.27% 	 Test Accuracy: 90.62%
+[9/9] 	 FashionMNIST Time 0.03s 	 Training Accuracy: 78.32% 	 Test Accuracy: 68.75%
 [FINAL] 	 MNIST Training Accuracy: 96.0% 	 Test Accuracy: 96.88%
 [FINAL] 	 FashionMNIST Training Accuracy: 78.32% 	 Test Accuracy: 68.75%
 
