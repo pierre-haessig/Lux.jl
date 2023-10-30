@@ -113,7 +113,7 @@ l = BranchLayer(NoOpLayer(), NoOpLayer(), NoOpLayer())
 ```
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/containers.jl#L167-L224' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/containers.jl#L167-L224' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -180,7 +180,7 @@ c = Chain(Dense(2, 3, relu), BatchNorm(3), Dense(3, 2))
 ```
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/containers.jl#L359-L421' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/containers.jl#L359-L421' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -249,7 +249,7 @@ end
   * States of each `layer` wrapped in a NamedTuple with `fields = layer_1, layer_2, ..., layer_N` (naming changes if using the kwargs API)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/containers.jl#L258-L319' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/containers.jl#L258-L319' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -297,7 +297,7 @@ Create a layer which passes an input to each path in `layers`, before reducing t
 See also [`SkipConnection`](layers#Lux.SkipConnection) which is `Parallel` with one identity.
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/containers.jl#L82-L126' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/containers.jl#L82-L126' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -348,7 +348,7 @@ The simplest "ResNet"-type connection is just `SkipConnection(layer, +)`.
 See [`Parallel`](layers#Lux.Parallel) for a more general implementation.
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/containers.jl#L1-L46' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/containers.jl#L1-L46' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -397,6 +397,7 @@ Frameworks like [`Pytorch`](https://pytorch.org/docs/stable/generated/torch.nn.C
       * a tuple of `N` integers, to apply the same padding at begin/end of each spatial dimension,
       * a tuple of `2*N` integers, for asymmetric padding, or
       * the singleton `SamePad()`, to calculate padding such that `size(output,d) == size(x,d) / stride` (possibly rounded) for each spatial dimension.
+      * Periodic padding can achieved by pre-empting the layer with a `WrappedFunction(x -> NNlib.circular_pad(x, N_pad; dims=pad_dims))`
   * `groups`: Expected to be an `Int`. It specifies the number of groups to divide a           convolution into (set `groups = in_chs` for Depthwise Convolutions). `in_chs`           and `out_chs` must be divisible by `groups`.
   * `use_bias`: Trainable bias can be disabled entirely by setting this to `false`.
   * `allow_fast_activation`: If `true`, then certain activations can be approximated with a faster version. The new activation function will be given by `NNlib.fast_act(activation)`
@@ -421,7 +422,7 @@ $$
   * `bias`: Bias (present if `use_bias=true`)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/conv.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/conv.jl#L1' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -476,7 +477,7 @@ Standard convolutional transpose layer.
   * `bias`: Bias (present if `use_bias=true`)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/conv.jl#L648' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/conv.jl#L650' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -537,7 +538,7 @@ $$
   * `bias`: Bias (present if `use_bias=true`)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/conv.jl#L517' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/conv.jl#L519' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -583,7 +584,7 @@ Call [`Lux.testmode`](../Building_Blocks/LuxCore#LuxCore.testmode) to switch to 
 See also [`Dropout`](layers#Lux.Dropout), [`VariationalHiddenDropout`](layers#Lux.VariationalHiddenDropout)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/dropout.jl#L1-L30' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/dropout.jl#L1-L30' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -625,7 +626,7 @@ Call [`Lux.testmode`](../Building_Blocks/LuxCore#LuxCore.testmode) to switch to 
 See also [`AlphaDropout`](layers#Lux.AlphaDropout), [`VariationalHiddenDropout`](layers#Lux.VariationalHiddenDropout)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/dropout.jl#L62-L94' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/dropout.jl#L62-L94' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -669,7 +670,7 @@ Call [`Lux.testmode`](../Building_Blocks/LuxCore#LuxCore.testmode) to switch to 
 See also [`AlphaDropout`](layers#Lux.AlphaDropout), [`Dropout`](layers#Lux.Dropout)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/dropout.jl#L123-L159' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/dropout.jl#L123-L159' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -705,7 +706,7 @@ Adaptive Max Pooling layer. Calculates the necessary window size such that its o
 See also [`MaxPool`](layers#Lux.MaxPool), [`AdaptiveMeanPool`](layers#Lux.AdaptiveMeanPool).
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/conv.jl#L416-L437' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/conv.jl#L418-L439' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -736,7 +737,7 @@ Adaptive Mean Pooling layer. Calculates the necessary window size such that its 
 See also [`MeanPool`](layers#Lux.MeanPool), [`AdaptiveMaxPool`](layers#Lux.AdaptiveMaxPool).
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/conv.jl#L452-L473' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/conv.jl#L454-L475' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -763,7 +764,7 @@ Global Max Pooling layer. Transforms (w,h,c,b)-shaped input into (1,1,c,b)-shape
 See also [`MaxPool`](layers#Lux.MaxPool), [`AdaptiveMaxPool`](layers#Lux.AdaptiveMaxPool), [`GlobalMeanPool`](layers#Lux.GlobalMeanPool)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/conv.jl#L374-L390' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/conv.jl#L376-L392' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -790,7 +791,7 @@ Global Mean Pooling layer. Transforms (w,h,c,b)-shaped input into (1,1,c,b)-shap
 See also [`MeanPool`](layers#Lux.MeanPool), [`AdaptiveMeanPool`](layers#Lux.AdaptiveMeanPool), [`GlobalMaxPool`](layers#Lux.GlobalMaxPool)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/conv.jl#L395-L411' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/conv.jl#L397-L413' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -836,7 +837,7 @@ $$
 See also [`Conv`](layers#Lux.Conv), [`MeanPool`](layers#Lux.MeanPool), [`GlobalMaxPool`](layers#Lux.GlobalMaxPool), [`AdaptiveMaxPool`](layers#Lux.AdaptiveMaxPool)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/conv.jl#L147' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/conv.jl#L149' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -882,7 +883,7 @@ $$
 See also [`Conv`](layers#Lux.Conv), [`MaxPool`](layers#Lux.MaxPool), [`GlobalMeanPool`](layers#Lux.GlobalMeanPool), [`AdaptiveMeanPool`](layers#Lux.AdaptiveMeanPool)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/conv.jl#L214' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/conv.jl#L216' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -952,7 +953,7 @@ $$
   * `rng`: Controls the randomness (if any) in the initial state generation
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/recurrent.jl#L463' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/recurrent.jl#L463' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1023,7 +1024,7 @@ $$
   * `rng`: Controls the randomness (if any) in the initial state generation
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/recurrent.jl#L278' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/recurrent.jl#L278' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1079,7 +1080,7 @@ $h_{new} = activation(weight_{ih} \times x + weight_{hh} \times h_{prev} + bias)
   * `rng`: Controls the randomness (if any) in the initial state generation
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/recurrent.jl#L160' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/recurrent.jl#L160' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1132,7 +1133,7 @@ This is completely distinct from `Flux.Recur`. It doesn't make the `cell` statef
   * Same as `cell`.
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/recurrent.jl#L8-L57' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/recurrent.jl#L8-L57' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1180,7 +1181,7 @@ To avoid undefined behavior, once the processing of a single sequence of data is
       * `carry`: The carry state of the `cell`.
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/recurrent.jl#L98-L137' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/recurrent.jl#L98-L137' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1241,7 +1242,7 @@ If `x` and `y` are matrices, then each column of the output `z = B(x, y)` is of 
   * `bias`: Bias of size `(out_dims, 1)` (present if `use_bias=true`)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/basic.jl#L306-L357' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/basic.jl#L306-L357' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1285,7 +1286,7 @@ Create a traditional fully connected layer, whose forward pass is given by: `y =
   * `bias`: Bias of size `(out_dims, 1)` (present if `use_bias=true`)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/basic.jl#L124-L160' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/basic.jl#L124-L160' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1329,7 +1330,7 @@ Unlike `Flux.Embedding`, this layer does not support using `OneHotArray` as an i
   * Empty `NamedTuple()`
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/basic.jl#L439-L474' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/basic.jl#L439-L474' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1371,7 +1372,7 @@ Create a Sparsely Connected Layer with a very specific structure (only Diagonal 
   * `bias`: Bias of size `(dims...)`
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/basic.jl#L224-L259' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/basic.jl#L224-L259' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1401,7 +1402,7 @@ Flattens the passed array into a matrix.
   * Empty `NamedTuple()`
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/basic.jl#L31-L44' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/basic.jl#L31-L44' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1452,7 +1453,7 @@ See also [`Parallel`](layers#Lux.Parallel) to reduce with other operators.
 [1] Goodfellow, Warde-Farley, Mirza, Courville & Bengio "Maxout Networks" [https://arxiv.org/abs/1302.4389](https://arxiv.org/abs/1302.4389)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/containers.jl#L501-L545' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/containers.jl#L501-L545' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1468,7 +1469,7 @@ NoOpLayer()
 As the name suggests does nothing but allows pretty printing of layers. Whatever input is passed is returned.
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/basic.jl#L83-L88' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/basic.jl#L83-L88' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1497,7 +1498,7 @@ Reshapes the passed array to have a size of `(dims..., :)`
   * Empty `NamedTuple()`
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/basic.jl#L1-L18' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/basic.jl#L1-L18' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1527,7 +1528,7 @@ Return a view of all the data of the input `x` where the index for dimension `di
   * Empty `NamedTuple()`
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/basic.jl#L51-L70' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/basic.jl#L51-L70' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1556,7 +1557,7 @@ Wraps a stateless and parameter less function. Might be used when a function is 
   * Empty `NamedTuple()`
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/basic.jl#L93-L113' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/basic.jl#L93-L113' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1642,7 +1643,7 @@ Passing a batch size of 1, during training will result in NaNs.
 See also [`BatchNorm`](layers#Lux.BatchNorm), [`InstanceNorm`](layers#Lux.InstanceNorm), [`LayerNorm`](layers#Lux.LayerNorm), [`WeightNorm`](layers#Lux.WeightNorm)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/normalize.jl#L6' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/normalize.jl#L6' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1712,7 +1713,7 @@ GroupNorm doesn't have CUDNN support. The GPU fallback is not very efficient.
 See also [`GroupNorm`](layers#Lux.GroupNorm), [`InstanceNorm`](layers#Lux.InstanceNorm), [`LayerNorm`](layers#Lux.LayerNorm), [`WeightNorm`](layers#Lux.WeightNorm)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/normalize.jl#L146-L213' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/normalize.jl#L146-L213' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1786,7 +1787,7 @@ InstanceNorm doesn't have CUDNN support. The GPU fallback is not very efficient.
 See also [`BatchNorm`](layers#Lux.BatchNorm), [`GroupNorm`](layers#Lux.GroupNorm), [`LayerNorm`](layers#Lux.LayerNorm), [`WeightNorm`](layers#Lux.WeightNorm)
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/normalize.jl#L250' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/normalize.jl#L250' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1849,7 +1850,7 @@ As of v0.5.0, the doc used to say `affine::Bool=false`, but the code actually ha
       * `scale`: Scale of shape `(shape..., 1)`
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/normalize.jl#L486' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/normalize.jl#L486' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1894,7 +1895,7 @@ Weight normalization is a reparameterization that decouples the magnitude of a w
   * Same as that of `layer`
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/normalize.jl#L361' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/normalize.jl#L361' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1931,7 +1932,7 @@ PixelShuffle is not a Layer, rather it returns a [`WrappedFunction`](layers#Lux.
   * Output of size `(r x W, r x H, C, N)` for 4D-arrays, and `(r x W, r x H, ..., C, N)` for D-dimensional data, where `D = ndims(x) - 2`
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/conv.jl#L488-L514' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/conv.jl#L490-L516' class='documenter-source'>source</a><br>
 
 </div>
 <br>
@@ -1983,7 +1984,7 @@ Currently supported upsampling `mode`s and corresponding NNlib's methods are:
   * Empty `NamedTuple()`
 
 
-<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/817887467cd647dda93d09e46625626ca547115f/src/layers/conv.jl#L281-L325' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/LuxDL/Lux.jl/blob/dbdad9ec3be4427dc2f6e0a80f1d1047187693e1/src/layers/conv.jl#L283-L327' class='documenter-source'>source</a><br>
 
 </div>
 <br>
